@@ -1,0 +1,197 @@
+h1{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+html, body{
+    height: 100%;
+}
+
+.navbar{
+    background-color: transparent;
+    border-bottom: solid;
+    
+}
+
+.container-fluid{
+    display: block;
+}
+
+.topics{
+    left: 650px;
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.navbar-brand{
+    font-size: 2.5rem;
+}
+.navbar a {
+    padding: 2% 2% 1% 0%;
+    color:black;
+    margin-right:40px;
+    margin-left: 12px;
+}
+
+
+#home-title{
+    color: #005EFF;
+    text-align: left;
+    font-size: 5.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    right: -10px;
+    position:relative;
+    padding: 2% 0% 3%0%;
+}
+
+.container{
+    position: relative;
+    display: inline-block;
+}
+
+#card-section{
+    margin-left: 100px;
+    display: inline-block;
+    position: absolute;
+    bottom: -265px;
+    height: 400px;
+    right: 400px;
+}
+
+.card{
+    width: 250px;
+    display: grid;
+    position: relative;
+    left: 300px;
+    margin-right: 10px !important;
+    bottom: 337px;
+    border: 2px solid !important;
+    margin-top: 4%;
+}
+
+.card img{
+    border-radius: 3%;
+    width: 100%;
+    border-style: solid;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.row{
+    height: 0px;
+    align-items:normal;
+
+}
+
+.span{
+    font-size: 45px !important;
+    color: black;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+.material-symbols-outlined {
+    
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#side-bar{
+    display: flex;
+    position: absolute;
+    left:-10px;
+    flex-direction: column;
+    height:400px;
+    overflow-y:auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background:transparent
+  }
+  
+  ::-webkit-scrollbar-thumb{
+     visibility: hidden;
+  }
+  
+
+.form-material{
+    padding: 4% 3% 2% 3%;
+    color:#005EFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: grid;
+}
+
+
+.form-title{
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.post-label{
+    width: 500px;
+}
+
+form .btn{
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+
+textarea, input, select{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.example-card{
+    position: relative;
+    display: inline-block;
+    left: 1200px;
+    top: -550px;
+    height: 400px;
+    width: 230px;
+}
+
+.input-group{
+    display:grid;
+    position: relative;
+    float:right;
+    bottom:100px;
+    left: 800px;
+    width: 400px;
+}
+
+.task-row{
+    display: inline-block;
+    position: absolute ;
+    top: 700px;
+}
+
+.selector-label-form{
+    margin: 2% 0% 2% 0%;
+    padding: 15px 0px 15px 0px;
+}
+
+.description-label{
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+}
