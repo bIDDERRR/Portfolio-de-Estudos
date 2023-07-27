@@ -6,6 +6,8 @@ const _ = require('lodash');
 
 const app = express();
 
+let subjects = []
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -23,4 +25,14 @@ app.get("/compose", function(req, res){
 
 app.post("/compose", function(req, res){
     res.render("home")
+    
+    const subject=[
+        title = req.body.subjectTitle,
+        selector = req.body.subjectSelector,
+        description = req.body.subjectDesc,
+    ]
+
+    subjects.push(subject);
+
+    console.log(subject)
 })

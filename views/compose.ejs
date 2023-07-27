@@ -3,18 +3,18 @@
   <div class="container-fluid form-material">
     <div class="row">
       <div class="col">
-        <form action="compose" method="post">
+        <form action="/compose" method="post">
           <div class=" mb-4 post-label">
             <div class="form-outline">
               <label class="form-label" for="form6Example1">Titulo</label>
-              <input type="text" id="form6Example1" class="form-control form-title" placeholder="Titulo da matéria">
+              <input type="text" id="" name="subjectTitle" class="form-control form-title" placeholder="Titulo da matéria">
             </div>
           </div>
           <div class="selector-label selector-label-form">
             <label class="selector-title form-label selector-label" for="form6Example1">Dificuldade</label>
-            <select class="form-select post-label" aria-label="Default select example">
+            <select class="form-select post-label" name="subjectSelector" aria-label="Default select example">
               <option selected>Selecione a sua dificuldade na matéria</option>
-              <option value="1">Extrema dificuldade</option>
+              <option value="1">Extremamente dificil</option>
               <option value="2">Um pouco dificil</option>
               <option value="3">Nem um pouco dificil</option>
             </select>
@@ -22,8 +22,8 @@
           <!-- Message input -->
           <div class="form-outline post-label mb-4 description-label">
             <label class="form-label" for="form6Example7">Descrição</label>
-            <textarea maxlength="130" class="form-control" id="form6Example7" rows="4"
-              placeholder="Descreva o seu entendimento de forma resumida da matéria."></textarea>
+            <textarea maxlength="130" class="form-control" id="" rows="4" name="subjectDesc"
+              placeholder="Descreva o seu entendimento em 130 caracteres sobre a matéria."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary post-label btn-block mb-4">Salvar</button>
@@ -31,30 +31,8 @@
       </div>
 
       <div class="col">
-        <div class="task-row">
-          <div id="example-card" class="card example-card" aria-hidden="true">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-              </h5>
-              <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-              </p>
-              <a class="btn btn-primary disabled placeholder col-6"></a>
-            </div>
-          </div>
-          <div class="input-group">
-            <label class="form-label text-end" for="">Adicione uma foto a sua matéria</label>
-            <input type="file" class="form-control upload-input w-100" id="inputGroupFile04"
-              aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-          </div>
-        </div>
-
       </div>
+
+    </div>
 
   </div>

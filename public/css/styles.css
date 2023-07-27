@@ -36,11 +36,10 @@ p, h5, #side-bar li{
 
 .navbar a:hover{
     text-decoration: underline;
-    text-shadow: 1px 1px 2px rgba(113, 190, 221, 0.44);
 }
 
 .navbar a {
-    padding: 2% 2% 1% 0%;
+    padding: 2% 2% 0% 0%;
     color:black;
     margin-right:40px;
     margin-left: 12px;
@@ -161,24 +160,6 @@ textarea, input, select{
     font-weight: 700;
 }
 
-.example-card{
-    position: relative;
-    display: inline-block;
-    height: 400px;
-}
-
-.input-group{
-    display:grid;
-    position: relative;
-    float:right;
-    width: 400px;
-}
-
-.task-row{
-    display: inline-block;
-    position: absolute ;
-}
-
 .selector-label-form{
     margin: 2% 0% 2% 0%;
     padding: 15px 0px 15px 0px;
@@ -187,4 +168,5 @@ textarea, input, select{
 .description-label{
     margin-bottom: 50px;
     padding-bottom: 15px;
+    margin-top: 50px;
 }
