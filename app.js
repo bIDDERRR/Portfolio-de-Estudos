@@ -17,22 +17,21 @@ app.listen(3000, function(req, res){
 })
 
 app.get("/", function(req, res){
-    res.render("home")
+    res.render("home", {newSubject: subjects})
 })
 app.get("/compose", function(req, res){
     res.render("compose")
 })
 
 app.post("/compose", function(req, res){
-    res.render("home")
+
     
-    const subject=[
-        title = req.body.subjectTitle,
-        selector = req.body.subjectSelector,
-        description = req.body.subjectDesc,
-    ]
-
+    const subject={
+        title: req.body.subjectTitle,
+        selector: req.body.subjectSelector,
+        description: req.body.subjectDesc,
+    }  
     subjects.push(subject);
+    res.redirect("/")
 
-    console.log(subject)
 })

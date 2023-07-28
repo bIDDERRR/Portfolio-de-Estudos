@@ -66,20 +66,20 @@ p, h5, #side-bar li{
 
 .card{
     width: 250px;
-    display: grid;
+    display: flex;
     position: relative;
     margin-right: 10px !important;
     border: 2px solid !important;
     margin-top: 5%;
     height: 400px;
+    overflow:auto;
+
 }
 
 .card img{
-    border-radius: 3%;
-    width: 100%;
     border-style: solid;
-    object-fit: cover;
-    margin-top: 10px;
+    margin: 10px 5px;
+    height: 130px;
 }
 
 .row{

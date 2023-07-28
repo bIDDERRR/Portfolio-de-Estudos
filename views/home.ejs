@@ -42,47 +42,23 @@
   <section id="card-section">
     <div class="card-group">
       <div class="row">
-        <!-- <div class="card col-lg-6">
-          <img
-            src="https://concursopolicial.com.br/wp-content/uploads/2020/05/matematica-concurso-policia-1280x720.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
+        <% newSubject.forEach(subject =>{%>
+          <div class="card col-lg-6">
+            <img  src="..."class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-primary"><%=subject.title%></h5>
+              <p class="card-text"><%=subject.selector %></p>
+              <p class="card-text"><%=subject.description %></p>
+            </div>
           </div>
-        </div>
-        <div class="card col-lg-6">
-          <img
-            src="https://concursopolicial.com.br/wp-content/uploads/2020/05/matematica-concurso-policia-1280x720.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body ">
-            <h5 class="card-title text-primary">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-        <div class="card col-lg-6">
-          <img
-            src="https://concursopolicial.com.br/wp-content/uploads/2020/05/matematica-concurso-policia-1280x720.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-        </div> -->
-        <div class="card col-lg-6">
-          <img
-            src="https://concursopolicial.com.br/wp-content/uploads/2020/05/matematica-concurso-policia-1280x720.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-primary"></h5>
-            <p class="card-text"></p>
-            <p class="card-text"></p>
-          </div>
-        </div>
+        <% }) %>
       </div>
     </div>
   </section>
 
 </div>
+
+<!-- TODO
+arrumar a quantidade de cards que podem ficar na home
+dar um jeito de colocar o switch no seletor
+mudar o design da imagem e colocar um tamanho fisico para ela. -->
