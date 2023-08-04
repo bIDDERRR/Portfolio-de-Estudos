@@ -6,6 +6,10 @@ const _ = require('lodash');
 
 const app = express();
 
+const extremamente = "Extremamente dificil";
+const umPouco = "Um pouco dificil";
+const nemUmPouco = "Nem um pouco dificil";
+
 let subjects = []
 
 app.set('view engine', 'ejs');
@@ -25,12 +29,23 @@ app.get("/compose", function(req, res){
 
 app.post("/compose", function(req, res){
 
-    
+        let selector =  req.body.subjectSelector;
+
+        if(selector ==="1"){
+            selector =extremamente;
+        }
+        if(selector ==="2"){
+            selector = umPouco;
+        }
+        if (selector ==="3"){
+            selector=nemUmPouco;
+        }
     const subject={
         title: req.body.subjectTitle,
-        selector: req.body.subjectSelector,
+        selector: selector,
         description: req.body.subjectDesc,
     }  
+
     subjects.push(subject);
     res.redirect("/")
 

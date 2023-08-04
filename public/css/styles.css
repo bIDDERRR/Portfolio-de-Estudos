@@ -55,13 +55,19 @@ p, h5, #side-bar li{
     padding: 2% 0% 3%0%;
 }
 
+/* arrumar a imagem dos cards, e refatorar as medidas de margin e padding deles
+padding pra esquerda ta muito grande */
+
 #card-section{
     margin-left: 100px;
     display: inline-block;
     position: absolute;
-    bottom:  75px;
-    height: 400px;
-    right: 100px;
+    bottom:  10px;
+    height: 450px;
+    right: 50px;
+    padding: 0% 1%;
+    overflow: auto;
+    width: 1060px;
 }
 
 .card{
@@ -70,7 +76,7 @@ p, h5, #side-bar li{
     position: relative;
     margin-right: 10px !important;
     border: 2px solid !important;
-    margin-top: 5%;
+    margin-top: 4%;
     height: 400px;
     overflow:auto;
 
@@ -78,8 +84,9 @@ p, h5, #side-bar li{
 
 .card img{
     border-style: solid;
-    margin: 10px 5px;
+    margin-top: 10px;
     height: 130px;
+    border-radius:10px;
 }
 
 .row{
