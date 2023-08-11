@@ -31,8 +31,40 @@
       </div>
 
       <div class="col">
+          <div class="box">
+            <div id="conteudo">
+            </div>
+                <input type="text" name="q1" id="inputConteudo" placeholder="New Item" autocomplete="off"></input>
+                <button id="adicionarTopico" type="button" name="list">+</button>      
+          </div>
       </div>
 
     </div>
 
   </div>
+
+<script>
+
+    const adicionarTopico = document.getElementById("adicionarTopico");
+    const conteudo = document.getElementById("conteudo");
+    const inputConteudo = document.getElementById("inputConteudo");
+
+    adicionarTopico.addEventListener("click", () => {
+
+        const novaCheckBox = document.createElement("input");
+        novaCheckBox.type = "checkbox";
+
+        const label = document.createElement("label");
+        label.textContent=inputConteudo.value;
+        
+        const div = document.createElement("div");
+        div.classList.add('topico');
+
+        conteudo.appendChild(div);
+        div.appendChild(novaCheckBox);
+        div.appendChild(label);
+    })
+
+ 
+
+</script>
