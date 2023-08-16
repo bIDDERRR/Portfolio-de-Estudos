@@ -7,10 +7,10 @@
           <div class=" mb-4 post-label">
             <div class="form-outline">
               <label class="form-label" for="form6Example1">Titulo</label>
-              <input type="text" id="" name="subjectTitle" class="form-control form-title" placeholder="Titulo da matéria">
+              <input type="text" id="" name="subjectTitle" class="form-control form-title" placeholder="Titulo da matéria" autofocus>
             </div>
           </div>
-          <div class="selector-label selector-label-form">
+          <div class="selector-label selector-label-form" >
             <label class="selector-title form-label selector-label" for="form6Example1">Dificuldade</label>
             <select class="form-select post-label" name="subjectSelector" aria-label="Default select example">
               <option selected>Selecione a sua dificuldade na matéria</option>
@@ -19,7 +19,7 @@
               <option value="3">Nem um pouco dificil</option>
             </select>
           </div>
-          <!-- Message input -->
+          <!-- Message label -->
           <div class="form-outline post-label mb-4 description-label">
             <label class="form-label" for="form6Example7">Descrição</label>
             <textarea maxlength="110" class="form-control" id="" rows="4" name="subjectDesc"
@@ -30,11 +30,12 @@
         </form>
       </div>
 
-      <div class="col">
+      <div class="col task-list">
+        <label id="taskList-title" >É aqui que você deve listar os conteudos que você quer estudar sobre essa matéria:</label>
           <div class="box">
             <div id="conteudo">
             </div>
-                <input type="text" name="q1" id="inputConteudo" placeholder="New Item" autocomplete="off"></input>
+                <input type="text" name="q1" id="inputConteudo" placeholder="Insira um novo conteudo" autocomplete="off"></input>
                 <button id="adicionarTopico" type="button" name="list">+</button>      
           </div>
       </div>
@@ -60,9 +61,12 @@
         const div = document.createElement("div");
         div.classList.add('topico');
 
+        const hr = document.createElement("hr")
+
         conteudo.appendChild(div);
         div.appendChild(novaCheckBox);
         div.appendChild(label);
+        conteudo.appendChild(hr);
     })
 
  
