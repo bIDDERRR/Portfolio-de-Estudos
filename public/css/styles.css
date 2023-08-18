@@ -185,14 +185,13 @@ textarea, input, select{
 }
 
 #conteudo{
-    height: 500px!important ;
+    height: 470px!important ;
     overflow: auto;
-    border: solid black 3px;
+    border: solid black 1px;
     border-radius: 10px;    
     width: 300px;
     position: relative;
-    left: 200px;
-    bottom:300px;
+    left: -240px;
     display: inline-block;
 }
 
@@ -206,6 +205,7 @@ textarea, input, select{
     text-align: center;
 }
 
+
 #inputConteudo{
     border-radius: 10px;
     padding:5px 93px;
@@ -213,6 +213,9 @@ textarea, input, select{
     border-color: rgb(3, 4, 4);
     border: groove 2px;
     display: inline-flex;
+    position: absolute;
+    bottom: 90px;
+    right: 50px;
 }
 
 #inputConteudo::placeholder{
@@ -221,22 +224,37 @@ textarea, input, select{
 }
 
 #adicionarTopico{
-    border-radius: 50%;
     border:none;
-    background-color: black;
-    color:white;
-    height: 30px;
-    width: 30px;
+    background:none;
+    color:rgb(127, 127, 127);
+    font-size: 2.5rem;
+    position: absolute;
+    right:450px; 
+    bottom:85px;
 }
 
 #taskList-title{
     font-size:1.3rem;
-    text-align: end;
+    text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
-    width: 100px;
+    width: 200px;
+    height: 200px;
     display:inline-block;
     position: relative;
-    top: 10px;
-    left: 90px;
+    left: 280px;
+    bottom:270px;
+}
+
+#taskList-title2{
+    text-align:center;
+    width: 200px;
+    height:auto;
+    position: relative;
+    display: inline-block;
+    bottom:280px;
+    left: 280px;
+    border: dashed 2px #000000;
+    padding:20px;
+
 }
