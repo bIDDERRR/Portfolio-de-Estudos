@@ -186,9 +186,9 @@ textarea, input, select{
 
 #conteudo{
     height: 470px!important ;
-    overflow: auto;
+    /* overflow-y: auto; */
     border: solid black 1px;
-    border-radius: 10px;    
+    border-radius: 5px;    
     width: 300px;
     position: relative;
     left: -240px;
@@ -214,8 +214,9 @@ textarea, input, select{
     border: groove 2px;
     display: inline-flex;
     position: absolute;
-    bottom: 90px;
-    right: 50px;
+    bottom: -0px;
+    width: 270px;
+    right: 28px;
 }
 
 #inputConteudo::placeholder{
@@ -229,8 +230,8 @@ textarea, input, select{
     color:rgb(127, 127, 127);
     font-size: 2.5rem;
     position: absolute;
-    right:450px; 
-    bottom:85px;
+    right:-5px; 
+    bottom:-10px;
 }
 
 #taskList-title{
