@@ -11,8 +11,6 @@ const umPouco = "Um pouco dificil";
 const nemUmPouco = "Nem um pouco dificil";
 
 let subjects = []
-let items = []
-
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -26,7 +24,7 @@ app.get("/", function(req, res){
     res.render("home", {newSubject: subjects})
 })
 app.get("/compose", function(req, res){
-    res.render("compose", {newListItems: items})
+    res.render("compose")
 })
 
 app.get("/subject", function(req, res){
@@ -34,7 +32,6 @@ app.get("/subject", function(req, res){
 })
 
 app.post("/compose", function(req, res){
-    //console.log(`The data is ${JSON.stringify(req)}`);
         let selector =  req.body.subjectSelector;
 
         if(selector ==="1"){
@@ -46,13 +43,12 @@ app.post("/compose", function(req, res){
         if (selector ==="3"){
             selector=nemUmPouco;
         }
-    const subject={
-        title: req.body.subjectTitle,
-        selector: selector,
-        description: req.body.subjectDesc,
-    }  
 
- 
+        const subject={
+            title: req.body.subjectTitle,
+            selector: selector,
+            description: req.body.subjectDesc
+        } 
     subjects.push(subject);
     res.redirect("/")
 

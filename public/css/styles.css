@@ -3,6 +3,10 @@ html, body{
     width: 100%;
 }
 
+body{
+    background-image: url("images/img.jpg");
+}
+
 h1, label{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -40,13 +44,13 @@ p, h5, #side-bar li{
 
 .navbar a {
     padding: 2% 2% 0% 0%;
-    color:black;
+    color:rgb(0, 0, 0);
     margin-right:40px;
     margin-left: 12px;
 }
 
 #home-title{
-    color: #005EFF;
+    color: #000000;
     text-align: left;
     font-size: 5.2rem;
     display: inline-block;
@@ -216,7 +220,13 @@ textarea, input, select{
     position: absolute;
     bottom: -0px;
     width: 250px;
-    right: 28px;
+    right: 0px;
+}
+#adicionar{
+    bottom:-40px;
+    right:270px;
+    display: inline-block;
+    position: relative;   
 }
 
 #inputConteudo::placeholder{
