@@ -3,13 +3,20 @@ html, body{
     width: 100%;
 }
 
-body{
-    background-image: url("images/img.jpg");
+.body-style{
+    background-image: url("images/img2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
 }
 
 h1, label{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    font-size: 1.3rem;
 }
 
 p, h5, #side-bar li{
@@ -18,7 +25,7 @@ p, h5, #side-bar li{
 
 .navbar{
     background-color: transparent;
-    border-bottom: solid;
+    border-bottom: solid white;
     
 }
 
@@ -37,20 +44,20 @@ p, h5, #side-bar li{
 .navbar-brand{
     font-size: 2.5rem;
 }
-
+/* 
 .navbar a:hover{
     text-decoration: underline;
-}
+} */
 
 .navbar a {
     padding: 2% 2% 0% 0%;
-    color:rgb(0, 0, 0);
+    color:#ffffff;
     margin-right:40px;
     margin-left: 12px;
 }
 
 #home-title{
-    color: #000000;
+    color: #c9530f;
     text-align: left;
     font-size: 5.2rem;
     display: inline-block;
@@ -66,8 +73,8 @@ padding pra esquerda ta muito grande */
     margin-left: 100px;
     display: inline-block;
     position: absolute;
-    bottom:  10px;
-    height: 450px;
+    bottom:  35px;
+    height: 400px;
     right: 50px;
     padding: 0% 1%;
     overflow: auto;
@@ -80,7 +87,7 @@ padding pra esquerda ta muito grande */
     position: relative;
     margin-right: 10px !important;
     border: 2px solid !important;
-    margin-top: 4%;
+    margin-top: 0%;
     height: 400px;
     overflow:auto;
 
@@ -99,7 +106,7 @@ padding pra esquerda ta muito grande */
 
 .span{
     font-size: 45px !important;
-    color: black;
+    color: rgb(255, 255, 255);
     position: relative;
     left: 10px;
     top: 10px;
@@ -120,6 +127,12 @@ padding pra esquerda ta muito grande */
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}        
+
+#materials-book{
+    left:5px;
+    top:5px !important;
+    position: relative;
 }
 
 #side-bar{
@@ -129,6 +142,8 @@ padding pra esquerda ta muito grande */
     flex-direction: column;
     height:400px;
     overflow-y:auto;
+    opacity: 0.9;
+    border-radius: 10px;
 }
 
 ::placeholder{
@@ -151,8 +166,8 @@ padding pra esquerda ta muito grande */
   
 
 .form-material{
-    padding: 4% 3% 2% 3%;
-    color:#005EFF;
+    padding: 4% 3% 0% 3%;
+    color:#d64a4a;
     display: grid;
 }
 
@@ -191,12 +206,13 @@ textarea, input, select{
 #conteudo{
     height: 470px!important ;
     overflow-y: auto;
-    border: solid black 1px;
+    border: solid rgb(255, 255, 255) 1px;
     border-radius: 5px;    
     width: 300px;
     position: relative;
     left: -240px;
     display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 
@@ -214,14 +230,18 @@ textarea, input, select{
     border-radius: 10px;
     padding:5px 93px;
     margin-top: 10px;
-    border-color: rgb(3, 4, 4);
-    border: groove 2px;
     display: inline-flex;
     position: absolute;
     bottom: -0px;
     width: 250px;
     right: 0px;
+    border: 0;
+    outline: 0;
+    background:transparent;
+    font-family: 'Space Mono', monospace;
+    border-bottom: solid 2px rgb(255, 255, 255);
 }
+
 #adicionar{
     bottom:-40px;
     right:270px;
@@ -252,20 +272,26 @@ textarea, input, select{
     width: 200px;
     height: 200px;
     display:inline-block;
+    color:rgb(255, 255, 255) ;
     position: relative;
     left: 280px;
-    bottom:270px;
+    top:250px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    /* bottom:270px; */
 }
 
 #taskList-title2{
     text-align:center;
     width: 200px;
-    height:auto;
+    height:250px;
     position: relative;
     display: inline-block;
-    bottom:280px;
-    left: 280px;
+    color:rgb(255, 255, 255) ;
+    /* bottom:280px;
+    left: 280px; */
     border: dashed 2px #000000;
     padding:20px;
+    top: 220px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;  
 
 }

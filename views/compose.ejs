@@ -26,11 +26,11 @@
               placeholder="Descreva o seu entendimento em 110 caracteres sobre a matéria."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary post-label btn-block mb-4">Salvar</button>
+          <button type="submit" class="btn btn-danger post-label btn-block mb-4">Salvar</button>
         </form>
       </div>
 
-      <div class="col task-list" style="display: inline;">
+      <div class="col task-list" style="display: flex;">
         <label id="taskList-title" >É aqui que você deve listar os conteudos que você quer estudar sobre essa matéria</label>
           <div class="box" style="display: inline;">
             <div id="conteudo">
@@ -74,7 +74,12 @@
         div.appendChild(label);
         conteudo.appendChild(hr);
     })
-
+    
+    const itens = document.querySelectorAll("topico")
+    itens.forEach(item =>{
+      const textos = item.textContent;
+      console.log(textos);
+    })
  
 
 </script>
