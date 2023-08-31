@@ -22,7 +22,7 @@
           <!-- Message label -->
           <div class="form-outline post-label mb-4 description-label">
             <label class="form-label" for="form6Example7">Descrição</label>
-            <textarea maxlength="110" class="form-control" id="" rows="4" name="subjectDesc"
+            <textarea maxlength="200" class="form-control" id="" rows="4" name="subjectDesc"
               placeholder="Descreva o seu entendimento em 110 caracteres sobre a matéria."></textarea>
           </div>
 
@@ -34,11 +34,10 @@
         <label id="taskList-title" >É aqui que você deve listar os conteudos que você quer estudar sobre essa matéria</label>
           <div class="box" style="display: inline;">
             <div id="conteudo">
-
-            </div>   
+            </div> 
             <div id="adicionar">
-              <form action="" method="">
-                  <input type="text" name="q1" id="inputConteudo" placeholder="" autocomplete="on"></input>
+              <form action="/compose" method="post">
+                  <input type="text" name="td" id="inputConteudo" placeholder="" autocomplete="on"></input>
                   <button id="adicionarTopico" type="button" name="list">+</button>      
                 </form>
             </div>
@@ -50,7 +49,7 @@
 
   </div>
 
-<script>
+<!-- <script>
 
     const adicionarTopico = document.getElementById("adicionarTopico");
     const conteudo = document.getElementById("conteudo");
@@ -81,5 +80,4 @@
       console.log(textos);
     })
  
-
-</script>
+</script> -->
