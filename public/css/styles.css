@@ -83,20 +83,19 @@ padding pra esquerda ta muito grande */
 
 .card{
     width: 250px;
-    display: flex;
     position: relative;
     margin-right: 10px !important;
     border: 2px solid !important;
     margin-top: 0%;
     height: 400px;
-    overflow:auto;
+    overflow:hidden;
 
 }
 
 .card img{
-    border-style: solid;
+    border: solid 1px black;
     margin-top: 10px;
-    height: 130px;
+    height: 130px !important;
     border-radius:10px;
 }
 
@@ -290,12 +289,53 @@ textarea, input, select{
     height:250px;
     position: relative;
     display: inline-block;
-    color:rgb(255, 255, 255) ;
-    /* bottom:280px;
-    left: 280px; */
+    color:rgb(255, 255, 255);
     border: dashed 2px #000000;
     padding:20px;
     top: 220px;
+    overflow: auto;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;  
 
+}
+
+.seRec{
+    color: white;
+    display:inline-block ;
+    margin-top: 30px;
+}
+
+#titleS{
+    font-size: 6rem;
+    display:inline-block;
+    color:#d64a4a;
+    font-family: 'Crete Round', serif;
+    margin: 10px 25px ;
+    letter-spacing:8px;
+    text-align: center;
+    position:relative;
+}
+
+#dificult{
+    color:white  ;
+    padding:20px 0px 10px 0px ;
+    margin-top:50px; 
+    font-size: 1.6rem;
+    text-align: start;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display:inline-block ;
+    text-decoration: underline dotted 2px;
+}
+
+.subject-container{
+   width :100%;
+    margin: auto;
+    margin-top: 20px;   
+}
+
+.subj-btn{
+    width:8% !important;   /* to make the button responsive */
+    position: absolute;
+    display: inline-block;
+    bottom: 80px;
 }

@@ -14,15 +14,15 @@
             <label class="selector-title form-label selector-label" for="form6Example1">Dificuldade</label>
             <select class="form-select post-label" name="subjectSelector" aria-label="Default select example">
               <option selected>Selecione a sua dificuldade na matéria</option>
-              <option value="1">Extremamente dificil</option>
-              <option value="2">Um pouco dificil</option>
-              <option value="3">Nem um pouco dificil</option>
+              <option value="1">extremamente dificil</option>
+              <option value="2">um pouco dificil</option>
+              <option value="3">nem um pouco dificil</option>
             </select>
           </div>
           <!-- Message label -->
           <div class="form-outline post-label mb-4 description-label">
             <label class="form-label" for="form6Example7">Descrição</label>
-            <textarea maxlength="200" class="form-control" id="" rows="4" name="subjectDesc"
+            <textarea maxlength="110" class="form-control" id="" rows="4" name="subjectDesc"
               placeholder="Descreva o seu entendimento em 110 caracteres sobre a matéria."></textarea>
           </div>
 
@@ -49,7 +49,7 @@
 
   </div>
 
-<!-- <script>
+<script>
 
     const adicionarTopico = document.getElementById("adicionarTopico");
     const conteudo = document.getElementById("conteudo");
@@ -72,12 +72,14 @@
         div.appendChild(novaCheckBox);
         div.appendChild(label);
         conteudo.appendChild(hr);
+        console.log(label.textContent);
     })
     
-    const itens = document.querySelectorAll("topico")
+
+</script>
+
+<!--    const itens = document.querySelectorAll("topico")
     itens.forEach(item =>{
       const textos = item.textContent;
-      console.log(textos);
-    })
- 
-</script> -->
+      
+    })   -->

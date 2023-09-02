@@ -1,16 +1,17 @@
 <%- include("partials/header") -%>
 
-<div class="container">
+<div class="container subject-container">
     <div class="row">
-      <div class="col">
-        <h1><%=subjectTitle%></h1>
-        <p><%=subjectSelector%></p>
-        <h1><%=subjDesc%></h1>
+      <div class="col seRec">
+        <p id='dificult' class='subject-text'>Você acha essa matéria <%=subjectSelector%></p>
+        <h2>Nossas recomendações:</h2>
+        <button type="button" class="btn btn-danger btn-lg subj-btn" >Voltar</button>
       </div>
-      <div class="col">
-
+      <div class="col"> 
+        <h1 id='titleS'><%=subjectTitle%></h1>
       </div>
-      <div class="col">
+      <div class="col" style="display: flex;">
+        <!-- nothing here for a moment -->
       </div>
     </div>
   </div>

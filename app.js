@@ -76,3 +76,8 @@ app.post("/compose", function(req, res){
     res.redirect("/")
 
 })
+
+
+//estilizar a pagina de subject, a forma de entrar em cada subject tambem, 
+//conseguir passar os dados da todolist para a pagina de subject
+//limpar o codigo 
