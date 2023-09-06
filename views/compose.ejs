@@ -39,7 +39,7 @@
               <form action="/compose" method="post">
                   <input type="text" name="td" id="inputConteudo" placeholder="" autocomplete="on"></input>
                   <button id="adicionarTopico" type="button" name="list">+</button>      
-                </form>
+              </form>
             </div>
           </div>
         <label id="taskList-title2">Fique atento e não deixe nenhum tópico sobre essa área passar.</label>
@@ -55,7 +55,9 @@
     const conteudo = document.getElementById("conteudo");
     const inputConteudo = document.getElementById("inputConteudo");
 
-    adicionarTopico.addEventListener("click", () => {
+       const tasks = []
+
+      function adicionaItemNaLista(){
 
         const novaCheckBox = document.createElement("input");
         novaCheckBox.type = "checkbox";
@@ -72,14 +74,16 @@
         div.appendChild(novaCheckBox);
         div.appendChild(label);
         conteudo.appendChild(hr);
-        console.log(label.textContent);
-    })
+        let task = label.textContent;
+        tasks.push({task: label.textContent})
+        document.getElementById('inputConteudo').value='';
+        console.log(tasks)
+        
+      }
     
-
+    adicionarTopico.addEventListener("click", adicionaItemNaLista)
+    export {tasks};
+    
 </script>
 
-<!--    const itens = document.querySelectorAll("topico")
-    itens.forEach(item =>{
-      const textos = item.textContent;
-      
-    })   -->
+

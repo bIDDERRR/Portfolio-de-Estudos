@@ -92,6 +92,17 @@ padding pra esquerda ta muito grande */
 
 }
 
+.card-title a {
+    text-decoration: none;
+    color:#c9530f !important;
+}
+
+.card-title:hover{
+    text-decoration: none;
+    color: #d64a4a;
+    cursor: pointer;
+}
+
 .card img{
     border: solid 1px black;
     margin-top: 10px;
@@ -305,7 +316,7 @@ textarea, input, select{
 }
 
 #titleS{
-    font-size: 6rem;
+    font-size: 3.4rem;
     display:inline-block;
     color:#d64a4a;
     font-family: 'Crete Round', serif;
@@ -313,10 +324,12 @@ textarea, input, select{
     letter-spacing:8px;
     text-align: center;
     position:relative;
+    width: 100%;
 }
 
 #dificult{
-    color:white  ;
+    color:#d64a4a ;
+    text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.59);
     padding:20px 0px 10px 0px ;
     margin-top:50px; 
     font-size: 1.6rem;
@@ -324,7 +337,8 @@ textarea, input, select{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     display:inline-block ;
-    text-decoration: underline dotted 2px;
+    letter-spacing: 3px;
+    text-decoration: underline dashed 4px;
 }
 
 .subject-container{
@@ -336,6 +350,15 @@ textarea, input, select{
 .subj-btn{
     width:8% !important;   /* to make the button responsive */
     position: absolute;
-    display: inline-block;
+    display: block;
     bottom: 80px;
 }
+
+.subj-btn a{
+    color:white ;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+

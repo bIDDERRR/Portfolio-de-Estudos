@@ -1,14 +1,17 @@
 const ejs = require("ejs");
 const express = require('express');
 const bodyParser = require ("body-parser")
-
+const axios = require('axios');
 const _ = require('lodash');
-
 const app = express();
 
-const extremamente = "Extremamente dificil";
-const umPouco = "Um pouco dificil";
-const nemUmPouco = "Nem um pouco dificil";
+import {tasks} from './'
+
+app.use(bodyParser.json());
+
+const extremamente = "extremamente dificil";
+const umPouco = "um pouco dificil";
+const nemUmPouco = "nem um pouco dificil";
 
 let subjects = [];
 let Topics = [];
@@ -77,6 +80,17 @@ app.post("/compose", function(req, res){
 
 })
 
+
+const items =[]
+
+axios.post('/api/tasksAdded', {tasks})
+
+.then(response =>{
+
+})
+.catch(error =>{
+    console.log()
+})
 
 //estilizar a pagina de subject, a forma de entrar em cada subject tambem, 
 //conseguir passar os dados da todolist para a pagina de subject
