@@ -9,8 +9,6 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    /* filter: blur(8px);
-    -webkit-filter: blur(8px); */
 }
 
 h1, label{
@@ -44,10 +42,6 @@ p, h5, #side-bar li{
 .navbar-brand{
     font-size: 2.5rem;
 }
-/* 
-.navbar a:hover{
-    text-decoration: underline;
-} */
 
 .navbar a {
     padding: 2% 2% 0% 0%;
@@ -65,9 +59,6 @@ p, h5, #side-bar li{
     position:relative;
     padding: 2% 0% 3%0%;
 }
-
-/* arrumar a imagem dos cards, e refatorar as medidas de margin e padding deles
-padding pra esquerda ta muito grande */
 
 #card-section{
     margin-left: 100px;
@@ -291,7 +282,6 @@ textarea, input, select{
     left: 280px;
     top:250px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 80px 4px;
-    /* bottom:270px; */
 }
 
 #taskList-title2{
@@ -348,7 +338,7 @@ textarea, input, select{
 }
 
 .subj-btn{
-    width:8% !important;   /* to make the button responsive */
+    width:8% !important; 
     position: absolute;
     display: block;
     bottom: 80px;

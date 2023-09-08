@@ -5,9 +5,9 @@ const axios = require('axios');
 const _ = require('lodash');
 const app = express();
 
-import {tasks} from './'
 
 app.use(bodyParser.json());
+
 
 const extremamente = "extremamente dificil";
 const umPouco = "um pouco dificil";
@@ -33,6 +33,7 @@ app.get("/", function(req, res){
 })
 app.get("/compose", function(req, res){
     res.render("compose")
+
 })
 
 app.get("/subject/:subjectName", function(req, res){
@@ -56,7 +57,7 @@ app.get("/subject/:subjectName", function(req, res){
 
     res.render("subject" )
 })
-
+const data = []
 app.post("/compose", function(req, res){
         let selector =  req.body.subjectSelector;
 
@@ -75,22 +76,16 @@ app.post("/compose", function(req, res){
             selector: selector,
             description: req.body.subjectDesc
         } 
+        const tasks = req.body.tasks;
+            data.push(tasks)
+            console.log(data)
     subjects.push(subject);
     res.redirect("/")
 
 })
 
 
-const items =[]
 
-axios.post('/api/tasksAdded', {tasks})
-
-.then(response =>{
-
-})
-.catch(error =>{
-    console.log()
-})
 
 //estilizar a pagina de subject, a forma de entrar em cada subject tambem, 
 //conseguir passar os dados da todolist para a pagina de subject

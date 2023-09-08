@@ -26,10 +26,9 @@
               placeholder="Descreva o seu entendimento em 110 caracteres sobre a matéria."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-danger post-label btn-block mb-4">Salvar</button>
+          <button type="submit" id='save-btn'class="btn btn-danger post-label btn-block mb-4">Salvar</button>
         </form>
       </div>
-
       <div class="col task-list" style="display: flex;">
         <label id="taskList-title" >É aqui que você deve listar os conteudos que você quer estudar sobre essa matéria</label>
           <div class="box" style="display: inline;">
@@ -46,14 +45,14 @@
       </div>
 
     </div>
-
   </div>
-
-<script>
+ 
+<script type="module">
 
     const adicionarTopico = document.getElementById("adicionarTopico");
     const conteudo = document.getElementById("conteudo");
     const inputConteudo = document.getElementById("inputConteudo");
+    const submit = document.getElementById("save-btn");
 
        const tasks = []
 
@@ -77,13 +76,30 @@
         let task = label.textContent;
         tasks.push({task: label.textContent})
         document.getElementById('inputConteudo').value='';
-        console.log(tasks)
-        
+        /* console.log(tasks) */
+
       }
     
-    adicionarTopico.addEventListener("click", adicionaItemNaLista)
-    export {tasks};
-    
-</script>
+  
+    function logTasksOnServer() {
+    fetch('/compose', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ tasks }), // Envia os dados da constante tasks
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log(result); // Log da resposta do servidor
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
+
+adicionarTopico.addEventListener("click", adicionaItemNaLista)
+submit.addEventListener('click', logTasksOnServer)
+</script>
 
