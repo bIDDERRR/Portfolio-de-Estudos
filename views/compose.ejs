@@ -3,14 +3,17 @@
   <div class="container-fluid form-material">
     <div class="row">
       <div class="col">
-        <form action="/compose" method="post">
+        <form id='especialForm' action="/compose" method="post">
           <div class=" mb-4 post-label">
             <div class="form-outline">
               <label class="form-label" for="form6Example1">Titulo</label>
-              <input type="text" id="" name="subjectTitle" class="form-control form-title" placeholder="Titulo da matéria" autofocus>
+              <input type="text" id="" name="subjectTitle" class="form-control form-title"
+                placeholder="Titulo da matéria" autofocus>
             </div>
           </div>
-          <div class="selector-label selector-label-form" >
+
+          <!--Dificult Selector  -->
+          <div class="selector-label selector-label-form">
             <label class="selector-title form-label selector-label" for="form6Example1">Dificuldade</label>
             <select class="form-select post-label" name="subjectSelector" aria-label="Default select example">
               <option selected>Selecione a sua dificuldade na matéria</option>
@@ -19,6 +22,7 @@
               <option value="3">nem um pouco dificil</option>
             </select>
           </div>
+          
           <!-- Message label -->
           <div class="form-outline post-label mb-4 description-label">
             <label class="form-label" for="form6Example7">Descrição</label>
@@ -26,80 +30,148 @@
               placeholder="Descreva o seu entendimento em 110 caracteres sobre a matéria."></textarea>
           </div>
 
-          <button type="submit" id='save-btn'class="btn btn-danger post-label btn-block mb-4">Salvar</button>
+          <!-- lista de tarefas -->
+          <div id="listaDeTarefas">
+            <input type="text" name="tarefa" placeholder="Adicionar conteudo">
+            <button type="button" id="btnDeTarefas">+</button>
+          </div>
+
+          <button type="submit" id='save-btn' class="btn btn-danger post-label btn-block mb-4">Salvar</button>
         </form>
       </div>
-      <div class="col task-list" style="display: flex;">
-        <label id="taskList-title" >É aqui que você deve listar os conteudos que você quer estudar sobre essa matéria</label>
-          <div class="box" style="display: inline;">
-            <div id="conteudo">
-            </div> 
-            <div id="adicionar">
-              <form action="/compose" method="post">
-                  <input type="text" name="td" id="inputConteudo" placeholder="" autocomplete="on"></input>
-                  <button id="adicionarTopico" type="button" name="list">+</button>      
-              </form>
-            </div>
-          </div>
-        <label id="taskList-title2">Fique atento e não deixe nenhum tópico sobre essa área passar.</label>
-      </div>
-
     </div>
   </div>
- 
-<script type="module">
+  
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const botaoDeTarefas = document.getElementById('btnDeTarefas')
+        const listaDeTarefas = document.getElementById('listaDeTarefas')
+
+        botaoDeTarefas.addEventListener('click', function(){
+          const taskInput = document.createElement('input')
+          taskInput.type = 'text';
+          taskInput.name = "tasks[]";
+          taskInput.placeholder = "tarefa";
+        })
+      } )
+
+
+      document.addEventListener('DOMContentLoaded', function(){
+        const formCompose = document.getElementById('especialForm')
+
+
+        formCompose.addEventListener('submit', function(e){
+          e.preventDefault();
+          
+          const formData = new FormData(formCompose)
+          const data  = {};
+
+          formData.forEach((value, key) =>{
+            data[key]=value;
+          })
+
+          fetch('/compose', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Resposta do servidor:', result);
+                // Redirecionar ou fazer algo com a resposta, se necessário
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+
+
+        })
+      })
+
+
+
+
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--           <div class="col task-list" style="display: flex;">
+            <label id="taskList-title">É aqui que você deve listar os conteudos que você quer estudar sobre essa
+              matéria</label>
+            <div class="box" style="display: inline;">
+              <div id="conteudo">
+              </div>
+              <div id="adicionar">
+                <input type="text" name="td" id="inputConteudo" placeholder="" autocomplete="on"></input>
+                <button id="adicionarTopico" type="button" name="list">+</button>
+              </div>
+            </div>
+            <label id="taskList-title2">Fique atento e não deixe nenhum tópico sobre essa área passar.</label>
+          </div> -->
+
+<!--   <script>
 
     const adicionarTopico = document.getElementById("adicionarTopico");
     const conteudo = document.getElementById("conteudo");
     const inputConteudo = document.getElementById("inputConteudo");
     const submit = document.getElementById("save-btn");
 
-       const tasks = []
+    let tasks = []
 
-      function adicionaItemNaLista(){
+    function adicionaItemNaLista() {
 
-        const novaCheckBox = document.createElement("input");
-        novaCheckBox.type = "checkbox";
+      const novaCheckBox = document.createElement("input");
+      novaCheckBox.type = "checkbox";
 
-        const label = document.createElement("label");
-        label.textContent=inputConteudo.value;
-        
-        const div = document.createElement("div");
-        div.classList.add('topico');
+      const label = document.createElement("label");
+      label.textContent = inputConteudo.value;
 
-        const hr = document.createElement("hr")
+      const div = document.createElement("div");
+      div.classList.add('topico');
 
-        conteudo.appendChild(div);
-        div.appendChild(novaCheckBox);
-        div.appendChild(label);
-        conteudo.appendChild(hr);
-        let task = label.textContent;
-        tasks.push({task: label.textContent})
-        document.getElementById('inputConteudo').value='';
-        /* console.log(tasks) */
+      const hr = document.createElement("hr")
 
-      }
-    
-  
+      conteudo.appendChild(div);
+      div.appendChild(novaCheckBox);
+      div.appendChild(label);
+      conteudo.appendChild(hr);
+      let task = label.textContent;
+      tasks.push({ task: label.textContent })
+      document.getElementById('inputConteudo').value = '';
+
+    }
+
+
     function logTasksOnServer() {
-    fetch('/compose', {
+
+      fetch('/compose', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ tasks }), // Envia os dados da constante tasks
-    })
-    .then(response => response.text())
-    .then(result => {
-        console.log(result); // Log da resposta do servidor
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+
+        body: JSON.stringify({ tasks }), // Envia os dados da let tasks
+
+      })
+        .then(response => response.text())
+        .then(result => {
+          /*     console.log(tasks);  */// Log da resposta do servidor
+          tasks.length = 0;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
 
 
-adicionarTopico.addEventListener("click", adicionaItemNaLista)
-submit.addEventListener('click', logTasksOnServer)
-</script>
+    }
 
+    adicionarTopico.addEventListener("click", adicionaItemNaLista)
+  </script> -->

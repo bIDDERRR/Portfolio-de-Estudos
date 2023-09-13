@@ -1,92 +1,86 @@
 const ejs = require("ejs");
 const express = require('express');
-const bodyParser = require ("body-parser")
+const bodyParser = require("body-parser")
 const axios = require('axios');
 const _ = require('lodash');
 const app = express();
-
+let subjects = [];
 
 app.use(bodyParser.json());
 
-
-const extremamente = "extremamente dificil";
-const umPouco = "um pouco dificil";
-const nemUmPouco = "nem um pouco dificil";
-
-let subjects = [];
-let Topics = [];
-
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.listen(3000, function(req, res){
+app.listen(3000, function (req, res) {
     console.log("O servidor está funcionando e ativo.")
 })
 
-app.get('/signatures', function(req, res){
+app.get('/signatures', function (req, res) {
     res.render('signatures')
 })
-
-app.get("/", function(req, res){
-    res.render("home", {newSubject: subjects})
+ 
+app.get("/", function (req, res) {
+    res.render("home", { newSubject: subjects })
 })
-app.get("/compose", function(req, res){
+
+app.get("/compose", function (req, res) {
     res.render("compose")
 
 })
 
-app.get("/subject/:subjectName", function(req, res){
+app.get("/subject/:subjectName", function (req, res) {
     let parameter = req.params.subjectName;
     const kebabParam = _.kebabCase(parameter)
     parameter = kebabParam;
 
-    subjects.forEach(subject =>{
-         let subjTitle = _.kebabCase(subject.title)
-         if(subjTitle === parameter){
-            
-           res.render('subject', {subjectTitle: subject.title,
-             subjectSelector: subject.selector, subjDesc: subject.description
-             }) 
+    subjects.forEach(subject => {
+        let subjTitle = _.kebabCase(subject.title)
+        if (subjTitle === parameter) {
+
+            res.render('subject', {
+                subjectTitle: subject.title,
+                subjectSelector: subject.selector, subjDesc: subject.description
+            })
         }
-         else{
+        else {
             console.log("It has ocurred an error.")
         }
     })
 
 
-    res.render("subject" )
+    res.render("subject")
 })
-const data = []
-app.post("/compose", function(req, res){
-        let selector =  req.body.subjectSelector;
 
-        if(selector ==="1"){
-            selector =extremamente;
-        }
-        if(selector ==="2"){
-            selector = umPouco;
-        }
-        if (selector ==="3"){
-            selector=nemUmPouco;
-        }
 
-        const subject={
-            title: req.body.subjectTitle,
-            selector: selector,
-            description: req.body.subjectDesc
-        } 
-        const tasks = req.body.tasks;
-            data.push(tasks)
-            console.log(data)
-    subjects.push(subject);
+
+app.post("/compose", function (req, res) {
+
+    const data =req.body;
+    const subjectData = {
+        title: data.subjectTitle, 
+        selector :data.subjectSelector,
+        description : data.subjectDesc,
+        task: data.tarefa
+    }
+    let selector = subjectData.subjectSelector;
+
+    if (selector === "1") {
+        selector = "extremamente dificil";
+    }
+    if (selector === "2") {
+        selector = "um pouco dificil";
+    }
+    if (selector === "3") {
+        selector = "nem um pouco dificil"; 
+    }
+   
+    console.log('Dados da matéria recebidos:', subjectData);
+    subjects.push(subjectData)
+
     res.redirect("/")
+    /* passando dados da pagina de compose para o servidor 
+    e retornando eles como um card na home */
 
 })
 
-
-
-
-//estilizar a pagina de subject, a forma de entrar em cada subject tambem, 
-//conseguir passar os dados da todolist para a pagina de subject
-//limpar o codigo 
