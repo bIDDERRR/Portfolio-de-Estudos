@@ -57,30 +57,20 @@ app.get("/subject/:subjectName", function (req, res) {
 app.post("/compose", function (req, res) {
 
     const data =req.body;
+    
     const subjectData = {
         title: data.subjectTitle, 
         selector :data.subjectSelector,
         description : data.subjectDesc,
-        task: data.tarefa
-    }
-    let selector = subjectData.subjectSelector;
-
-    if (selector === "1") {
-        selector = "extremamente dificil";
-    }
-    if (selector === "2") {
-        selector = "um pouco dificil";
-    }
-    if (selector === "3") {
-        selector = "nem um pouco dificil"; 
+        tasks: data.tasks
     }
    
-    console.log('Dados da matéria recebidos:', subjectData);
+   
     subjects.push(subjectData)
-
-    res.redirect("/")
-    /* passando dados da pagina de compose para o servidor 
-    e retornando eles como um card na home */
-
+    console.log(subjects)
+   
 })
 
+ /* console.log('Dados da matéria recebidos:', subjectData); */
+    /* passando dados da pagina de compose para o servidor 
+    e retornando eles como um card na home */

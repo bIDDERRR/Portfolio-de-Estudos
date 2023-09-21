@@ -356,11 +356,13 @@ textarea, input, select{
 
 
 #listaDeTarefas{
-    display: inline-block;
+    display: inline;
     width: 30%;
     text-align: center;
     position: absolute;
+    bottom:100px;
     left: 1000px;
+
 }
 
 #listaDeTarefas input{
@@ -380,7 +382,32 @@ textarea, input, select{
     height: 30px;
     text-align: center;
     background: transparent;
-    font-size: 1.8  rem;
+    font-size: 1.8rem;
     color: white;
 
+}
+
+#return-btn{
+    position:absolute;
+    font-size: 1.1rem;
+    border:none;
+    border-radius:10px;
+    padding :10px;
+    margin:7px;
+    left:1490px;
+    bottom: 70px;
+    width: 7%;
+}
+
+#return-btn a{
+    text-decoration: none;
+    color: white !important;
+}
+
+#lista{
+
+    height:400px;
+    width:400px;
+    border: 1px solid black;
+    overflow: auto;
 }

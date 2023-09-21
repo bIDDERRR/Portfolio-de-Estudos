@@ -31,147 +31,98 @@
           </div>
 
           <!-- lista de tarefas -->
-          <div id="listaDeTarefas">
-            <input type="text" name="tarefa" placeholder="Adicionar conteudo">
+          <div id="listaDeTarefas" >
+            <div id="lista"></div>
+            <input id="inputDeTarefas" type="text" name="tarefa" placeholder="Adicionar conteudo">
             <button type="button" id="btnDeTarefas">+</button>
           </div>
 
-          <button type="submit" id='save-btn' class="btn btn-danger post-label btn-block mb-4">Salvar</button>
+          <button type="button" id='save-btn' class="btn btn-danger post-label btn-block mb-4" href="/">Salvar</button>
         </form>
+        <button id="return-btn" type="button" class="btn btn-danger btn-lg" ><a target="_parent" href="/">Voltar</a>
+        </button>
+       
       </div>
     </div>
   </div>
   
 
   <script>
-      document.addEventListener('DOMContentLoaded', function(){
-        const botaoDeTarefas = document.getElementById('btnDeTarefas')
-        const listaDeTarefas = document.getElementById('listaDeTarefas')
 
-        botaoDeTarefas.addEventListener('click', function(){
+      const botaoDeTarefas = document.getElementById('btnDeTarefas')
+      const listaDeTarefas = document.getElementById('listaDeTarefas')
+      const botaoDeSubmit = document.getElementById('save-btn')
+      const lista = document.getElementById('lista')
+      const inputTarefas = document.getElementById('inputDeTarefas')
+      let tasks =  []  
+
+        function adicionarItem(){
+
           const taskInput = document.createElement('input')
-          taskInput.type = 'text';
-          taskInput.name = "tasks[]";
-          taskInput.placeholder = "tarefa";
-        })
-      } )
+          taskInput.type = 'checkbox';
 
+          const label = document.createElement("label");
+          label.textContent= inputTarefas.value;
+
+
+          const div = document.createElement("div");
+          div.classList.add('topico');
+
+          const hr  = document.createElement('hr')
+          
+          lista.appendChild(div)
+          div.appendChild(taskInput)
+          div.appendChild(label)
+          div.appendChild(hr)
+          let task = label.textContent;
+          tasks.push(task);
+          document.getElementById('inputDeTarefas').value='';
+
+        }
+
+        
+
+      botaoDeTarefas.addEventListener('click', adicionarItem)
 
       document.addEventListener('DOMContentLoaded', function(){
         const formCompose = document.getElementById('especialForm')
 
 
-        formCompose.addEventListener('submit', function(e){
-          e.preventDefault();
+        botaoDeSubmit.addEventListener('click', function(event){
           
           const formData = new FormData(formCompose)
           const data  = {};
+          data.tasks = tasks;
 
           formData.forEach((value, key) =>{
             data[key]=value;
           })
 
+          console.log(data) 
+
+          //sinalizando para o usuario do que aconteceu 
+          alert("Sua materia foi salva!")
+
           fetch('/compose', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-            },
+            }, 
+           
             body: JSON.stringify(data),
           })
             .then(response => response.json())
             .then(result => {
-                console.log('Resposta do servidor:', result);
+                
                 // Redirecionar ou fazer algo com a resposta, se necessário
             })
             .catch(error => {
                 console.error('Erro:', error);
-            });
-
+            })
 
         })
       })
-
-
-
 
   </script>
   
-  
-  
-  
-  
-  
-  
-  
-  <!--           <div class="col task-list" style="display: flex;">
-            <label id="taskList-title">É aqui que você deve listar os conteudos que você quer estudar sobre essa
-              matéria</label>
-            <div class="box" style="display: inline;">
-              <div id="conteudo">
-              </div>
-              <div id="adicionar">
-                <input type="text" name="td" id="inputConteudo" placeholder="" autocomplete="on"></input>
-                <button id="adicionarTopico" type="button" name="list">+</button>
-              </div>
-            </div>
-            <label id="taskList-title2">Fique atento e não deixe nenhum tópico sobre essa área passar.</label>
-          </div> -->
 
-<!--   <script>
-
-    const adicionarTopico = document.getElementById("adicionarTopico");
-    const conteudo = document.getElementById("conteudo");
-    const inputConteudo = document.getElementById("inputConteudo");
-    const submit = document.getElementById("save-btn");
-
-    let tasks = []
-
-    function adicionaItemNaLista() {
-
-      const novaCheckBox = document.createElement("input");
-      novaCheckBox.type = "checkbox";
-
-      const label = document.createElement("label");
-      label.textContent = inputConteudo.value;
-
-      const div = document.createElement("div");
-      div.classList.add('topico');
-
-      const hr = document.createElement("hr")
-
-      conteudo.appendChild(div);
-      div.appendChild(novaCheckBox);
-      div.appendChild(label);
-      conteudo.appendChild(hr);
-      let task = label.textContent;
-      tasks.push({ task: label.textContent })
-      document.getElementById('inputConteudo').value = '';
-
-    }
-
-
-    function logTasksOnServer() {
-
-      fetch('/compose', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-
-        body: JSON.stringify({ tasks }), // Envia os dados da let tasks
-
-      })
-        .then(response => response.text())
-        .then(result => {
-          /*     console.log(tasks);  */// Log da resposta do servidor
-          tasks.length = 0;
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-
-
-    }
-
-    adicionarTopico.addEventListener("click", adicionaItemNaLista)
-  </script> -->
