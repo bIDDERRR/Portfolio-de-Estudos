@@ -131,10 +131,16 @@ p, h5, #side-bar li{
   'opsz' 48
 }        
 
+.fs-4{
+    left: 20px;
+    position: relative ;
+
+}
 #materials-book{
     left:5px;
     top:5px !important;
     position: relative;
+    text-align: center;
 }
 
 #side-bar{
@@ -403,8 +409,8 @@ textarea, input, select{
     border-radius:10px;
     padding :10px;
     margin:7px;
-    left:1490px;
-    bottom: 70px;
+    left:420px;
+    bottom: 85px;
     width: 7%;
 }
 
@@ -425,4 +431,74 @@ textarea, input, select{
     opacity: 0.8;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 10px ), repeating-linear-gradient( #c9530f55, #c9530f );
+}
+
+#account-form{
+    position: relative;
+    /* display: flex; */
+    width:500px;
+    height: 600px;
+    text-align: center;
+    left: 25%;
+    margin: 10%;
+    padding: 10px;
+/*     background-color: white; */
+    color: #e46014;
+    bottom:100px;
+    font-family: 'Space Mono', monospace;
+   background-color: #ffffff;
+    background-attachment: fixed;
+    background-size: cover;   
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#account-title{
+    color: #e46014;
+    font-size: 3rem ;
+    /* font-family: 'PT Serif', serif; */
+    padding-top: 25px   ;
+}
+#account-selector{
+    width: 300px;
+    height: 40px;
+    border:none;
+    color:#e46014; 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#account-btn{
+    margin-top: 10px;
+    position: relative;
+    width: 125px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.account-txt{
+    position: relative;
+    color: #d64a4a;
+    left:-110px;
+}
+
+#account-btn a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.accountDiv label{
+    font-size: 1.6rem;
+}
+
+.account-input{
+    /* border-radius: 10px; */
+/*     background: none; */
+    border: none;
+    width: 300px;
+    height: 40px;   
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.accountDiv{
+    padding:20px;
 }

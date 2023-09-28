@@ -29,6 +29,18 @@ app.get("/compose", function (req, res) {
 
 })
 
+app.get("/progress", function(req, res){
+    res.send("A Pagina não esta pronta ainda :/")
+})
+
+app.get("/tips", function(req, res){
+    res.render("tips")
+})
+
+app.get("/accounts", function(req, res){
+    res.render("accounts")
+})
+
 app.get("/subject/:subjectName", function (req, res) {
     let parameter = req.params.subjectName;
     const kebabParam = _.kebabCase(parameter)

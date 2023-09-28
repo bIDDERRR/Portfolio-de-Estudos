@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+<div id="account-form">
+    <form>
+        <h1 id="account-title">Sua Conta</h1>
+        <div class="accountDiv">
+            <label class="account-txt">Nome</label><br>
+            <input type="text" class="account-input" id="name-input" placeholder="Nome completo..."> 
+        </div>
+        <div class="accountDiv">
+            <label class="account-txt">Email</label><br>
+            <input class="account-input"type="email" name="" id="email-input" placeholder="Email completo">
+        </div>
+        <div id="select-finaly" class="accountDiv"><br>
+            <label class="">Qual seu objetivo com o uso deste projeto?</label>
+            <select id="account-selector">
+                <option>Passar em uma prova</option>
+                <option>Organizar minha rotina de estudos do curso/faculdade</option>
+                <option>Facilitar com as materias da escola</option>
+            </select>
+        </div>
+        <button id="account-btn" class="btn btn-lg btn-danger" type="submit"><a href="/">Enviar</a></button>
+    </form>
+</div>
