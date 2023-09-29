@@ -59,6 +59,7 @@ p, h5, #side-bar li{
     position:relative;
     padding: 2% 0% 3%0%;
     margin-bottom:15px;
+    user-select: none;
 }
 
 #card-section{
@@ -383,13 +384,6 @@ textarea, input, select{
     font-size: 1.2rem;
     
 }
-
-/* .topico input{
-    left: 30px;
-    position: relative;
-
-} */
-
 #listaDeTarefas button{
     border: none;
     border-radius: 15px;
@@ -443,7 +437,7 @@ textarea, input, select{
     margin: 10%;
     padding: 10px;
 /*     background-color: white; */
-    color: #e46014;
+    color: #3085C3;
     bottom:100px;
     font-family: 'Space Mono', monospace;
    background-color: #ffffff;
@@ -453,16 +447,16 @@ textarea, input, select{
 }
 
 #account-title{
-    color: #e46014;
+    color: #3085C3;
     font-size: 3rem ;
     /* font-family: 'PT Serif', serif; */
     padding-top: 25px   ;
 }
 #account-selector{
-    width: 300px;
+    width: 400px;
     height: 40px;
     border:none;
-    color:#e46014; 
+    color:#000000; 
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -475,7 +469,7 @@ textarea, input, select{
 
 .account-txt{
     position: relative;
-    color: #d64a4a;
+    color: #3085C3;
     left:-110px;
 }
 
@@ -487,8 +481,12 @@ textarea, input, select{
 
 .accountDiv label{
     font-size: 1.6rem;
-}
+    color: #3085C3;
 
+ 
+}.accountDiv ::placeholder{
+        color:#000000;;
+    }
 .account-input{
     /* border-radius: 10px; */
 /*     background: none; */
@@ -501,4 +499,57 @@ textarea, input, select{
 
 .accountDiv{
     padding:20px;
+}
+
+#signatures-row{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#signatures-title{
+    font-family:'Montserrat', sans-serif ;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0px;
+    margin-top: 30px;
+    color: #d64a4a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.box{
+    width: 90%;
+    height:auto;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.sign-plans, .sign-btn, .sign-price, .sign-desc{
+    padding: 15px;
+}
+
+#b1 h1{
+    font-size: 2rem;
+    color: #3085C3;
+}
+
+#b2 h1{
+    font-size: 2.5rem;
+    color:#d64a4a;
+}
+
+#b3 h1{
+    font-size: 2rem;
+    color:#186F65;
+}
+
+#sidebarTitle{
+    pointer-events: none;
+    cursor: default;
 }
