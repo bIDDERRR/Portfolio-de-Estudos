@@ -453,6 +453,7 @@ textarea, input, select{
     padding-top: 25px   ;
 }
 #account-selector{
+    border-radius: 10px;
     width: 400px;
     height: 40px;
     border:none;
@@ -488,7 +489,7 @@ textarea, input, select{
         color:#000000;;
     }
 .account-input{
-    /* border-radius: 10px; */
+    border-radius: 10px;
 /*     background: none; */
     border: none;
     width: 300px;
@@ -532,6 +533,7 @@ textarea, input, select{
 
 .sign-plans, .sign-btn, .sign-price, .sign-desc{
     padding: 15px;
+    
 }
 
 #b1 h1{

@@ -12,7 +12,17 @@
         <h1 id='titleS'><%=subjectTitle%></h1>
       </div>
       <div class="col" style="display: flex;">
-        <!-- nothing here for a moment -->
+          <div class="">
+             <% subjectTasks.forEach(task =>{%>
+            <li>
+              <ol><%=task%></ol>
+            </li>
+             <% }) %>
+          </div>
+       
+      </div>
+      <div class="col">
+        <p><%=subjDesc%></p>
       </div>
     </div>
   </div>
