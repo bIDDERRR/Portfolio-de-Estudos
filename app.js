@@ -36,7 +36,8 @@ app.get("/subject/:subjectName", function (req, res) {
 
             res.render('subject', {
                 subjectTitle: subject.title,
-                subjectSelector: subject.selector, subjDesc: subject.description, 
+                subjectSelector: subject.selector,
+                subjDesc: subject.description, 
                 subjectTasks: subject.tasks
             })
         }

@@ -1,28 +1,41 @@
 <%- include("partials/header") -%>
 
-<div class="container subject-container">
+<div class="container-fluid subject-container">
     <div class="row">
+
       <div class="col seRec">
         <p id='dificult' class='subject-text'>Você acha essa matéria <strong><%=subjectSelector%></strong></p>
         <h2>Nossas recomendações:</h2>
+        <h6 id="instructions">
+          1. Estabeleça um Horário e Metas<br>
+          2. Use a Técnica Pomodoro<br>
+          3. Varie seu Material de Estudo<br>
+          4. Anotações e Resumos<br>
+          5. Espaço de Estudo Confortável<br>
+          6. Revise Regularmente
+        </h6>
         <button type="button" class="btn btn-danger btn-lg subj-btn" ><a target="_parent" href="/">Voltar</a>
         </button>
-      </div> 
-      <div class="col"> 
-        <h1 id='titleS'><%=subjectTitle%></h1>
       </div>
+
       <div class="col" style="display: flex;">
-          <div class="">
-             <% subjectTasks.forEach(task =>{%>
-            <li>
-              <ol><%=task%></ol>
-            </li>
-             <% }) %>
+          <div class="subjectItemsBox">
+            <h1 id='titleS'><%=subjectTitle%></h1>
+            <div id="subjectItems">
+                <% subjectTasks.forEach(task =>{%>
+              <ol class="itemsMarker list-group list-group-numbered">
+                <label class="itemsInTheBox"><input class="checkboxItem"type="checkbox"><%=task%></label>
+              </ol>
+              <% }) %>
+            </div>
           </div>
-       
       </div>
+
       <div class="col">
-        <p><%=subjDesc%></p>
+        <div id="subjectDescBox">
+          <h3><%=subjDesc%></h3>
+        </div>
       </div>
+
     </div>
   </div>

@@ -308,11 +308,6 @@ textarea, input, select{
 
 }
 
-.seRec{
-    color: white;
-    display:inline-block ;
-    margin-top: 30px;
-}
 
 #titleS{
     font-size: 3.4rem;
@@ -326,19 +321,7 @@ textarea, input, select{
     width: 100%;
 }
 
-#dificult{
-    color:#d64a4a ;
-    text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.59);
-    padding:20px 0px 10px 0px ;
-    margin-top:50px; 
-    font-size: 1.6rem;
-    text-align: start;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    display:inline-block ;
-    letter-spacing: 3px;
-    text-decoration: underline dashed 4px;
-}
+
 
 .subject-container{
    width :100%;
@@ -375,12 +358,11 @@ textarea, input, select{
 #inputDeTarefas{
     border-radius: 10px;
     border:none;
-    border-bottom: #ffffff 1px solid;
     width:400px;
     height: 35px;
     padding: 2%;
-    color: #e46014;
-    background: none;
+    background-color: white;
+    color: #c9530f;
     font-size: 1.2rem;
     
 }
@@ -421,10 +403,7 @@ textarea, input, select{
     position: relative;
     border: 1px solid rgb(255, 255, 255);
     overflow: auto;
-    background-color: #ffffff;
-    opacity: 0.8;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 10px ), repeating-linear-gradient( #c9530f55, #c9530f );
+    background-color: #f6ebeb;
 }
 
 #account-form{
@@ -551,7 +530,75 @@ textarea, input, select{
     color:#186F65;
 }
 
-#sidebarTitle{
+#sidebarTitle, #sideBarItems{
     pointer-events: none;
     cursor: default;
+}
+
+.subjectItemsBox{
+    width:100%;
+    height: 20%;
+    border-radius: 10px;
+    border: none;
+}
+
+.checkboxItem{
+    float: left;
+    top: 10px !important;
+    position: relative;
+    left: 30px;
+}
+
+#subjectItems{
+    margin: 40px;
+    height: 450px;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background-color:aliceblue;
+}
+.itemsInTheBox{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #000000;
+    text-align: center;
+    display: inline;
+    width: 100%;
+    padding: 25px 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.seRec h2{
+    color: white;
+    display:inline-block ;
+    margin-top: 5px;
+    left: 100px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dificult{
+    color:#d64a4a ;
+    text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.59);
+    padding:20px 0px 10px 0px ;
+    margin-top:120px; 
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    display:inline-block ;
+    letter-spacing: 3px;
+    text-decoration: underline dashed 2px;
+    left: 70px;
+    position: relative;
+}
+
+#instructions{
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    line-height: 30px;
 }
