@@ -33,7 +33,7 @@ p, h5, #side-bar li{
 
 .topics{
     top: 10px;
-    left: 730px;
+    left: 950px;
     position: relative;
     display: inline-block;
     font-size: 1.8rem;
@@ -78,16 +78,43 @@ p, h5, #side-bar li{
     width: 250px;
     position: relative;
     margin-right: 30px !important;
-    border: 2px solid !important;
+    border-radius:20px ;
     margin-top: 0%;
     height: 400px;
-    overflow:hidden;
+    overflow:auto;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    
+}
 
+.card-title{
+    font-weight: 800;
+    padding: 20px 15px 15px 15px;
+    letter-spacing: 4px;
+    font-size: 2.4rem;
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    overflow:clip ellipsis;
+}
+
+.card-text{
+    color:#252B48;
+    font-size: 1.4rem;
+    text-align: start;
+    margin: -10px 5px 20px 5px;
+}
+
+.card-description{
+    text-align: start;
+    color: #252B48;
+    font-size: 1.2rem;
+    font-family: 'Crete Round', serif;
 }
 
 .card-title a {
     text-decoration: none;
-    color:#c9530f !important;
+    color:#071952 !important;
 }
 
 .card-title:hover{
@@ -313,12 +340,12 @@ textarea, input, select{
     font-size: 3.4rem;
     display:inline-block;
     color:#d64a4a;
-    font-family: 'Crete Round', serif;
-    margin: 10px 25px ;
-    letter-spacing:8px;
+    font-family:'Montserrat', sans-serif;
+    letter-spacing:6px;
     text-align: center;
     position:relative;
     width: 100%;
+    font-weight: 700;
 }
 
 
@@ -330,10 +357,14 @@ textarea, input, select{
 }
 
 .subj-btn{
-    width:8% !important; 
+    width:10% !important; 
     position: absolute;
-    display: block;
+    display:inline-block;
     bottom: 80px;
+    left: 90px;
+    display: grid;
+    place-items: center;
+    
 }
 
 .subj-btn a{
@@ -555,12 +586,12 @@ textarea, input, select{
     overflow: auto;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    background-color:aliceblue;
+    background-color:white;
 }
 .itemsInTheBox{
     font-size: 1.6rem;
     font-weight: 900;
-    color: #000000;
+    color:#3085C3;
     text-align: center;
     display: inline;
     width: 100%;
@@ -581,17 +612,16 @@ textarea, input, select{
 
 #dificult{
     color:#d64a4a ;
-    text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.59);
     padding:20px 0px 10px 0px ;
-    margin-top:120px; 
+    margin-top:60px; 
     font-size: 1.6rem;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     display:inline-block ;
     letter-spacing: 3px;
     text-decoration: underline dashed 2px;
-    left: 70px;
+    left: 0px;
     position: relative;
 }
 
@@ -600,5 +630,31 @@ textarea, input, select{
     color: white;
     font-size: 1.3rem;
     margin-top: 10px;
-    line-height: 30px;
+    line-height: 32px;
+}
+
+#thirdCol{
+    width: 30%;
+}
+
+#subjectDescBox{
+    width: 90%;
+    border:none;
+    border-radius: 10px;
+    height: 70%;
+    overflow: auto;
+    padding: 40px;
+    color:#c9530f;
+    background-color: white;
+    margin: 120px 10px 50px 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#subjectTxt{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    position: relative;
+    word-wrap: break-word;
 }

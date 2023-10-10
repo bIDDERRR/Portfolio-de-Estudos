@@ -58,22 +58,12 @@ app.post("/compose", function (req, res) {
    
     
     const subjectData = {
-        title: data.subjectTitle, 
-        selector :data.subjectSelector,
+        title: data.subjectTitle,         
         description : data.subjectDesc,
-        tasks: data.tasks
-    } 
-    /* const selector = data.subjectSelector; */
-   /*  if(selector  === 1){
-        selector = 'extremamente dificl'
+        tasks: data.tasks,
+        selector: data.subjectSelector
     }
-    if(selector ===2){
-        selector ='um pouco dificil'
-    }
-    if(selector===3 ){
-       selector = 'nem um pouco dificil'
-    } */
-    /* console.log(selector) */
+    
     subjects.push(subjectData)
     console.log(subjects)
    

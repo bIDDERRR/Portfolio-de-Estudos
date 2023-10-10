@@ -47,11 +47,10 @@
       <div class="row">
         <% newSubject.forEach(subject =>{%>
           <div class="card col-lg-6">
-            <img  src="..."class="card-img-top" alt="...">
+            <h1 class="card-title text-danger"><a href="/subject/<%=subject.title%>"><%=subject.title%></a></h1>
             <div class="card-body">
-              <h5 class="card-title text-danger"><a href="/subject/<%=subject.title%>"><%=subject.title%></a></h5>
               <p class="card-text"><%=subject.selector %></p>
-              <p class="card-text"><%=subject.description %></p>
+              <p class="card-description"><%=subject.description %></p>
             </div>
           </div>
         <% }) %>
