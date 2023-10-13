@@ -259,7 +259,6 @@ textarea, input, select{
     margin: 15px 20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-  /*   padding: 10px; */
     color:black;
     text-align: center;
 }
@@ -439,14 +438,12 @@ textarea, input, select{
 
 #account-form{
     position: relative;
-    /* display: flex; */
     width:500px;
     height: 600px;
     text-align: center;
     left: 25%;
     margin: 10%;
     padding: 10px;
-/*     background-color: white; */
     color: #3085C3;
     bottom:100px;
     font-family: 'Space Mono', monospace;
@@ -459,7 +456,6 @@ textarea, input, select{
 #account-title{
     color: #3085C3;
     font-size: 3rem ;
-    /* font-family: 'PT Serif', serif; */
     padding-top: 25px   ;
 }
 #account-selector{
@@ -500,7 +496,6 @@ textarea, input, select{
     }
 .account-input{
     border-radius: 10px;
-/*     background: none; */
     border: none;
     width: 300px;
     height: 40px;   
